@@ -29,8 +29,12 @@ const resolveRootPackageWithGOPATH = () => {
   return rootPkg;
 };
 
+const FocusOnPrivate = (): boolean => {
+  return workspace.getConfiguration('groupImports').get('FocusOnPrivate') as boolean;
+};
+
 export const resolveRootPackage = () => {
-  if (fileInGOPATH(process.env.GOPATH)) {
+  if (fileInGOPATH(process.env.GOPATH) && !FocusOnPrivate()) {
     return resolveRootPackageWithGOPATH();
   }
 

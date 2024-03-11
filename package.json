@@ -44,6 +44,11 @@
           "type": "string",
           "default": "",
           "description": "The go private packages are assumed to be own"
+        },
+        "groupImports.FocusOnPrivate": {
+          "type": "boolean",
+          "default": "",
+          "description": "Focus on packages in this repository. Ignore other packages belonging to the organization."
         }
       }
     }
